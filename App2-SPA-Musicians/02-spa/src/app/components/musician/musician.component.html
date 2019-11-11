@@ -1,0 +1,24 @@
+<h1>{{musician.name | uppercase}} <small>{{musician.birthDate | date: "dd/MM/yyyy"}}<span *ngIf="musician.deathDate != null"> - {{musician.deathDate | date: "dd/MM/yyyy"}}</span></small></h1>
+<hr>
+<div class="row animated fadeIn fast">
+    <div class="col-md-4 musician-card-side-content">
+        <a href="musicians" class="btn btn-outline-danger btn-block">Go back...</a> 
+        <br/>
+        <img src="{{musician.img}}" class="img-fluid" alt="">
+    </div>
+
+    <div class="col-md-8 animated fadeIn musician-card-content">
+        <div>
+            <h3 class="row">{{musician.name }}</h3>
+        </div>
+        <hr>    
+        <p>
+        {{musician.bio}}
+        </p>
+        <div>
+            <!-- Different images depending on whether the musician is from argentina or other places-->
+            <img *ngIf="musician.location == 'Buenos Aires, Argentina'" src="assets/img/_argentina_circle.png" alt="Argentina" title="{{musician.location}}" class="musician-card-location-img">
+            <img *ngIf="musician.location != 'Buenos Aires, Argentina'" src="assets/img/_world_circle.png" alt="Worldwide" title="{{musician.location}}" class="musician-card-location-img">
+        </div>
+    </div>
+</div>

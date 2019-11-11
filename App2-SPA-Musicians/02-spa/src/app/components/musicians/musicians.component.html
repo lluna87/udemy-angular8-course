@@ -1,0 +1,17 @@
+<h1>Musicians <small>Argentina & the world</small></h1>
+<hr>
+
+
+<div class="card-columns">
+    <div class="card animated fadeIn fast" *ngFor="let musician of musicians;let i = index;">
+        <img [src]="musician.img" class="card-img-top musicians-image-preview" [alt]="musician.name" (click)="seeMusician(musician.id)">
+        <div class="card-body">
+          <h5 class="card-title">{{musician.name}}</h5>
+          <p class="card-text"><small class="text-muted">{{musician.location}}</small></p>
+          <p class="card-text">{{musician.bio}}</p>
+          <p class="card-text"><small class="text-muted">{{musician.birthDate}}</small><small *ngIf="musician.deathDate!='-'" class="text-muted"> | {{musician.deathDate}}</small></p>
+          
+          <button (click)="seeMusician(musician.id)" type="button" class="btn btn-outline-primary btn-block">See more...</button>
+        </div>
+      </div>
+</div>
