@@ -9,18 +9,14 @@ import { Router } from '@angular/router';
 })
 export class MusiciansComponent implements OnInit {
 
-  musicians:Musician[] = [];
+  musicians: Musician[] = [];
 
-  constructor(private _musiciansService:MusiciansService,
-              private _router:Router) { 
+  constructor(private _musiciansService: MusiciansService,
+    private _router: Router) {
   }
 
   ngOnInit() {
     this.musicians = this._musiciansService.getMusicians();
-  }
-
-  seeMusician(id:number) {
-    this._router.navigate(['/musician', id]);
   }
 
 }

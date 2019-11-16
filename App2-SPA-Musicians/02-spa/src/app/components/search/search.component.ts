@@ -22,14 +22,9 @@ export class SearchComponent implements OnInit {
     });
     
     this.searchResults = _.sortBy(_musiciansService.searchMusician(this.term), (musician) => musician.name);
-
   }
 
   ngOnInit() {
-  }
-
-  seeMusician(id:number) {
-    this._router.navigate(['/musician', id]);
   }
 
 }

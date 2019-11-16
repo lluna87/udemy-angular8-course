@@ -16,6 +16,8 @@ import { MusiciansComponent } from './components/musicians/musicians.component';
 import { AboutComponent } from './components/about/about.component';
 import { MusicianComponent } from './components/musician/musician.component';
 import { SearchComponent } from './components/search/search.component';
+import { MusicianCardComponent } from './components/musician-card/musician-card.component';
+import { SearchResultComponent } from './components/search-result/search-result.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { SearchComponent } from './components/search/search.component';
     MusiciansComponent,
     AboutComponent,
     MusicianComponent,
-    SearchComponent
+    SearchComponent,
+    MusicianCardComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,
