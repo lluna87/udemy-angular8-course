@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Musician } from 'src/app/services/musicians.service';
 
@@ -11,17 +11,21 @@ import { Musician } from 'src/app/services/musicians.service';
 export class MusicianCardComponent implements OnInit {
 
   @Input() musician:Musician;
+  @Input() id:number;
 
-  constructor(
-    private _router: Router
-  ) { }
+  @Output() pickedMusician: EventEmitter<number>; 
+
+  constructor(private _router: Router) { 
+    this.pickedMusician = new EventEmitter();
+  }
 
   ngOnInit() {
   }
 
   
-  seeMusician(id: number) {
-    this._router.navigate(['/musician', id]);
+  seeMusician() {
+    // this._router.navigate(['/musician', this.id]);
+    this.pickedMusician.emit(this.id);
   }
 
 }

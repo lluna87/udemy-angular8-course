@@ -19,4 +19,8 @@ export class MusiciansComponent implements OnInit {
     this.musicians = this._musiciansService.getMusicians();
   }
 
+  seeMusician(id:number) {
+    this._router.navigate(['/musician', id]);
+  }
+
 }

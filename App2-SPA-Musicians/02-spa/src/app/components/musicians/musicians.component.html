@@ -3,5 +3,5 @@
 
 
 <div class="card-columns">
-    <app-musician-card [musician]="someMusician" *ngFor="let someMusician of musicians;let i = index;"></app-musician-card>
+    <app-musician-card [musician]="someMusician" [id]="someMusician.id" (pickedMusician)="seeMusician($event)" *ngFor="let someMusician of musicians;let i = index;" ></app-musician-card>
 </div>
