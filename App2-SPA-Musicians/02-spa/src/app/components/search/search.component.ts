@@ -19,9 +19,13 @@ export class SearchComponent implements OnInit {
     ) {
     this._activatedRoute.params.subscribe(params => {
       this.term = params['term'];
+      this.searchResults = _.sortBy(
+        _musiciansService.searchMusician(this.term), 
+        (musician) => musician.name
+        );
+      console.log(this.searchResults);
     });
     
-    this.searchResults = _.sortBy(_musiciansService.searchMusician(this.term), (musician) => musician.name);
   }
 
   ngOnInit() {
