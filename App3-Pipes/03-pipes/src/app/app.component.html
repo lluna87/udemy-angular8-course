@@ -1,0 +1,66 @@
+<div class="container">
+  <br>
+  <h1>Pipes</h1>
+  <hr/>
+
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Variable</th>
+        <th scope="col">Pipe</th>
+        <th scope="col">Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{ name }}</th>
+        <td>uppercase</td>
+        <td>{{ name | uppercase }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ name }}</th>
+        <td>lowercase</td>
+        <td>{{ name | lowercase }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ name }}</th>
+        <td>slice:11</td>
+        <td>{{ name | slice:11 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ name }}</th>
+        <td>slice:8:18</td>
+        <td>{{ name | slice:8:18 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ numberArray }}</th>
+        <td>slice:1:5</td>
+        <td>{{ numberArray | slice:1:5 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ pi }}</th>
+        <td>number</td>
+        <td>{{ pi | number:'3.0-0' }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ pi }}</th>
+        <td>number</td>
+        <td>{{ pi | number:'1.0-2' }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ percentNumber }}</th>
+        <td>percent:'2.2-2'</td>
+        <td>{{ percentNumber | percent:'2.2-2' }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h4>Slice</h4>
+  <ul>
+    <!-- The slice only shows the available values or the index 20 -->
+    <li *ngFor="let item of numberArray | slice:5:20">{{ item }}</li>
+  </ul>
+
+</div>
+
+<router-outlet></router-outlet>
