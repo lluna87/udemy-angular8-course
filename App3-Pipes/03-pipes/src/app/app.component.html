@@ -52,6 +52,46 @@
         <td>percent:'2.2-2'</td>
         <td>{{ percentNumber | percent:'2.2-2' }}</td>
       </tr>
+      <tr>
+        <th scope="row">{{ salary }}</th>
+        <td>currency</td>
+        <td>{{ salary | currency }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ salary }}</th>
+        <td>currency:'EUR':true:'4.0-1'</td>
+        <td>{{ salary | currency:'EUR':true:'4.0-1' }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ salary }}</th>
+        <td>currency:'EUR':false:'4.0-1'</td>
+        <td>{{ salary | currency:'EUR':false:'4.0-1' }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ promiseValue }}</th>
+        <td>async</td>
+        <td>{{ promiseValue | async }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ dateToDisplay }}</th>
+        <td>date</td>
+        <td>{{ dateToDisplay | date:'short' }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ dateToDisplay }}</th>
+        <td>date:'YYYY - dd'</td>
+        <td>{{ dateToDisplay | date:'MMMM - dd' }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ fullName }}</th>
+        <td>capitalized</td>
+        <td>{{ fullName | capitalized }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ fullName }}</th>
+        <td>capitalized</td>
+        <td>{{ fullName | capitalized:true }}</td>
+      </tr>
     </tbody>
   </table>
   
@@ -61,6 +101,10 @@
     <li *ngFor="let item of numberArray | slice:5:20">{{ item }}</li>
   </ul>
 
+  <h4>JSON</h4>
+  <pre>
+    {{ musician | json }}
+  </pre>
 </div>
 
 <router-outlet></router-outlet>
