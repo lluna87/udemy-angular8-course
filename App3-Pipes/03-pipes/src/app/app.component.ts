@@ -26,4 +26,6 @@ export class AppComponent {
     setTimeout(() => resolve("Data is here!"), 3500);
   });
   public dateToDisplay:Date = new Date();
+  public videoID:string = "SV-y91BZonY";
+  public aFakePassword = "ThisIsAFakePassword20";
 }

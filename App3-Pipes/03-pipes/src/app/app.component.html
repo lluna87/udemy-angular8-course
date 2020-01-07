@@ -92,6 +92,11 @@
         <td>capitalized</td>
         <td>{{ fullName | capitalized:true }}</td>
       </tr>
+      <tr>
+        <th scope="row">{{ aFakePassword }}</th>
+        <td>password</td>
+        <td>{{ aFakePassword | password }}</td>
+      </tr>
     </tbody>
   </table>
   
@@ -105,6 +110,15 @@
   <pre>
     {{ musician | json }}
   </pre>
+
+  <h4>YouTube <small>video</small></h4>
+  <div style="text-align: center;">
+    <iframe width="560" height="315" 
+      [src]="videoID | secureDom:'https://www.youtube.com/embed/'" 
+      frameborder="0" allowfullscreen
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+    ></iframe>
+  </div>
 </div>
 
 <router-outlet></router-outlet>
