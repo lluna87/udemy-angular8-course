@@ -94,8 +94,14 @@
       </tr>
       <tr>
         <th scope="row">{{ aFakePassword }}</th>
-        <td>password</td>
-        <td>{{ aFakePassword | password }}</td>
+        <td>
+          password:visible => {{ visiblePassword }}
+          <br/>
+          <button type="button" class="btn btn-info" 
+            (click)="visiblePassword = !visiblePassword"
+            >{{ visiblePassword ? 'Hide' : 'Show' }}</button>
+        </td>
+        <td>{{ aFakePassword | password:visiblePassword }}</td>
       </tr>
     </tbody>
   </table>

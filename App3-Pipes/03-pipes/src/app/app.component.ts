@@ -28,4 +28,6 @@ export class AppComponent {
   public dateToDisplay:Date = new Date();
   public videoID:string = "SV-y91BZonY";
   public aFakePassword = "ThisIsAFakePassword20";
+  public visiblePassword = false;
+
 }

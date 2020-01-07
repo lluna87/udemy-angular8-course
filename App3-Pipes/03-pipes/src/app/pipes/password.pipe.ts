@@ -5,13 +5,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PasswordPipe implements PipeTransform {
 
-  transform(value:string): any {
-    let result = "";
-    for (let i = 0; i < value.length; i++) {
-      result += "*";
-    }
+  transform(value:string, isVisible:boolean = false): any {
+    if (isVisible || value == undefined || value == ' ') return value;
 
-    return result;
+    return '*'.repeat(value.length);
   }
+
+
 
 }
