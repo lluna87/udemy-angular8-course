@@ -1,7 +1,6 @@
 <h1>Musicians <small>Argentina & the world</small></h1>
 <hr>
 
-
 <div class="card-columns">
     <app-musician-card [musician]="someMusician" [id]="someMusician.id" (pickedMusician)="seeMusician($event)" *ngFor="let someMusician of musicians;let i = index;" ></app-musician-card>
 </div>
