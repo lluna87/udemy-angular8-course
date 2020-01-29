@@ -33,7 +33,7 @@ export class SpotifyService {
     country: "AR",
     recordLimit: 20,
     offset: 5,
-    token: "BQC1TZ-Es0bBx5zk_iFDI6D6NDLKyWWJzsKSsEKnBJHstAFzvBGKAqiGjCb1PGFy7Oz29_tGikqfkabOfogI5ZFsFSkBCn3hUSdh3LfVa_wSq0L1PzV1vQiMHW5Gg0H3hwC5sUyNAijHEIHi4mk"
+    token: "BQAviG515qLl-qyVKg5oL9x2VUCGAPfP8XmfI3o7lAD13LCpjsvV1QtUf9H9OAMbQXhR-Jt5vT3M2eboQnRWrKVuR1IcZ_aTyT-1-u93TogK1_h_9zwdqgyFobDqv9JcT4wDPaDhgkfFKtLpI-o"
   }
 
   getNewReleases() {
