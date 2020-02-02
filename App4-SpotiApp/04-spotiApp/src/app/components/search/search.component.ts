@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
   public search(term:string) {
     /* Deberia deshabilitar la anmacion de carga  */
     this.isLoading = term != undefined && term != null;
-    this.spotify.getArtist(term).subscribe((data:any) => {
+    this.spotify.getArtists(term).subscribe((data:any) => {
         this.artists = data;
         this.isLoading = false;
       });

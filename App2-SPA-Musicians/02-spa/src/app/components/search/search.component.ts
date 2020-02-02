@@ -23,7 +23,6 @@ export class SearchComponent implements OnInit {
         _musiciansService.searchMusician(this.term), 
         (musician) => musician.name
         );
-      console.log(this.searchResults);
     });
     
   }

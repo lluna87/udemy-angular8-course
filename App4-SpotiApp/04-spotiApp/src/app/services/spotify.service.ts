@@ -11,7 +11,6 @@ export class SpotifyService {
   constructor(
     private http:HttpClient
   ) { 
-    console.log("Spotify Service is available");
   }
 
   /** Usable URLs
@@ -33,7 +32,7 @@ export class SpotifyService {
     country: "AR",
     recordLimit: 20,
     offset: 5,
-    token: "BQAviG515qLl-qyVKg5oL9x2VUCGAPfP8XmfI3o7lAD13LCpjsvV1QtUf9H9OAMbQXhR-Jt5vT3M2eboQnRWrKVuR1IcZ_aTyT-1-u93TogK1_h_9zwdqgyFobDqv9JcT4wDPaDhgkfFKtLpI-o"
+    token: "GET_A_TOKEN_FROM : https://developer.spotify.com/console/"
   }
 
   getNewReleases() {
@@ -47,11 +46,19 @@ export class SpotifyService {
   }
 
 
-    public getArtist(term:string) {
+    public getArtists(term:string) {
       let url:string = `search?q=${term}&type=artist&market=AR&limit=5`;
 
       return this.getQuery(url).
         pipe(map(data => data['artists'].items));
     }
 
+    public getArtist(id:string) {
+      return this.getQuery(`artists/${ id }`);
+    }
+
+    public getArtistTopTracks(id:string) {
+      return this.getQuery(`artists/${ id }/top-tracks?country=${ this.parameters.country }`).
+        pipe(map(data => data['tracks']));
+    }
 }
