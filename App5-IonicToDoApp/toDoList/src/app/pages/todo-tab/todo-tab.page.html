@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="secondary">
+        <ion-title>
+            To Do
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-list>
+        <ion-item *ngFor="let listItem of toDoService.lists" detail>
+            <ion-label>{{ listItem.title }}</ion-label>
+        </ion-item>
+    </ion-list>
+
+    <!-- fab placed to the top end -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="addList()">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+    <app-explore-container name="To Do page"></app-explore-container>
+</ion-content>
