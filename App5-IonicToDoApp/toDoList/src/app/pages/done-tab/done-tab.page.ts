@@ -10,7 +10,7 @@ export class DoneTabPage {
 
   constructor(
     public toDoService: ToDoService
-    ) {
+  ) {
 
   }
 

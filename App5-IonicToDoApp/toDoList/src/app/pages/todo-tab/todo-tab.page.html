@@ -8,8 +8,9 @@
 
 <ion-content [fullscreen]="true">
     <ion-list>
-        <ion-item *ngFor="let listItem of toDoService.lists" detail>
+        <ion-item *ngFor="let listItem of toDoService.lists" detail (click)="openList(listItem)">
             <ion-label>{{ listItem.title }}</ion-label>
+            <ion-note slot="end" color="tertiary">{{ listItem.items.length }} items</ion-note>
         </ion-item>
     </ion-list>
 

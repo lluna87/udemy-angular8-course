@@ -16,4 +16,4 @@ import { ExploreContainerComponentModule } from '../../explore-container/explore
   ],
   declarations: [ToDoTabPage]
 })
-export class ToDoTabPageModule {}
+export class ToDoTabPageModule { }

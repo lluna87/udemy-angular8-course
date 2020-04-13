@@ -28,7 +28,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'add',
+        path: 'add/:listId',
         children: [
           {
             path: '',
@@ -44,7 +44,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/add',
+        redirectTo: '/tabs/add/:listId',
         pathMatch: 'full'
       },
       {
@@ -70,4 +70,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }
