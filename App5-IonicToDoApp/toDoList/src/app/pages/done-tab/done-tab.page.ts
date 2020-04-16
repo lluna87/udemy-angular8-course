@@ -8,9 +8,7 @@ import { ToDoService } from '../../services/todo.service';
 })
 export class DoneTabPage {
 
-  constructor(
-    public toDoService: ToDoService
-  ) {
+  constructor() {
 
   }
 

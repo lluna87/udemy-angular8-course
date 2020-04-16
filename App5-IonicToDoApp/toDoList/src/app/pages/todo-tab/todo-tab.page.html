@@ -7,19 +7,14 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-list>
-        <ion-item *ngFor="let listItem of toDoService.lists" detail (click)="openList(listItem)">
-            <ion-label>{{ listItem.title }}</ion-label>
-            <ion-note slot="end" color="tertiary">{{ listItem.items.length }} items</ion-note>
-        </ion-item>
-    </ion-list>
+
+    <app-lists></app-lists>
 
     <!-- fab placed to the top end -->
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button (click)="addList()">
+        <ion-fab-button (click)="utils.openCreateListPopUp()">
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>
     </ion-fab>
 
-    <app-explore-container name="To Do page"></app-explore-container>
 </ion-content>

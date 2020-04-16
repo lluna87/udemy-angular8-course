@@ -38,4 +38,25 @@ export class ToDoService {
     }
   }
 
+  private getListsByState(isCompleted: boolean){
+    if (this.lists === null || this.lists.length === 0) {
+      return [];
+    }
+
+    return this.lists.filter(o => o.completed === isCompleted);
+  }
+
+  public getPendingLists() {
+    return this.getListsByState(false);
+  }
+
+  public getCompletedLists() {
+    return this.getListsByState(true);
+  }
+
+  public removeList(listId: number) {
+    this.lists = this.lists.filter(o => o.id !== listId);
+    this.saveToStorage();
+  }
+
 }

@@ -14,6 +14,16 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../../pages/todo-tab/todo-tab.module').then(m => m.ToDoTabPageModule)
+          },
+          {
+            path: 'add/:listId',
+            children: [
+              {
+                path: '',
+                loadChildren: () =>
+                  import('../../pages/add/add.module').then(m => m.AddPageModule)
+              }
+            ]
           }
         ]
       },
@@ -24,16 +34,16 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../../pages/done-tab/done-tab.module').then(m => m.DoneTabPageModule)
-          }
-        ]
-      },
-      {
-        path: 'add/:listId',
-        children: [
+          },
           {
-            path: '',
-            loadChildren: () =>
-              import('../../pages/add/add.module').then(m => m.AddPageModule)
+            path: 'add/:listId',
+            children: [
+              {
+                path: '',
+                loadChildren: () =>
+                  import('../../pages/add/add.module').then(m => m.AddPageModule)
+              }
+            ]
           }
         ]
       },
@@ -44,7 +54,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/add/:listId',
+        redirectTo: '/tabs/todo/add/:listId',
         pathMatch: 'full'
       },
       {
